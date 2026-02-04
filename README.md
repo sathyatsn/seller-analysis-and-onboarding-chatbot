@@ -4,6 +4,17 @@ A smart chatbot that helps you find and evaluate the best sellers on Whatnot. Th
 
 **Built for Whatnot** - This entire project was created specifically for analyzing Whatnot sellers and making better onboarding decisions.
 
+## The Business Problem
+
+When onboarding new sellers to a marketplace, you face several challenges:
+
+- **Time-consuming manual research** - Checking each seller's profile, reviews, and reputation takes hours
+- **Inconsistent evaluation** - Different people might judge sellers differently
+- **Missing community insights** - Hard to know what real users are saying on social media
+- **Scale issues** - Can't efficiently evaluate hundreds of potential sellers
+
+**This project solves these problems** by automating the entire seller evaluation process. Instead of spending hours per seller, you get comprehensive reports with data-driven recommendations in minutes.
+
 ## What Does This Do?
 
 Think of this as your personal assistant for seller research. Instead of manually checking hundreds of seller profiles, this tool:
