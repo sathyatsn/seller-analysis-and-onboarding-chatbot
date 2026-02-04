@@ -1,0 +1,16 @@
+# Sensitive files
+.env
+*.pyc
+__pycache__/
+
+# Data files (optional - remove if you want to include them)
+*.json
+*.csv
+*.txt
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
