@@ -1,113 +1,114 @@
-# Whatnot Seller Analysis & Onboarding Chatbot
+# Seller Analysis and Onboarding Chatbot
 
-An AI-powered chatbot system for evaluating and onboarding Whatnot sellers based on comprehensive data analysis including ratings, reviews, sentiment analysis, and social media presence.
+A smart chatbot that helps you find and evaluate the best sellers on Whatnot. This project uses AI to analyze seller data, read community feedback from Reddit, and give you recommendations on which sellers to work with.
 
-## Features
+**Built for Whatnot** - This entire project was created specifically for analyzing Whatnot sellers and making better onboarding decisions.
 
-- **Automated Seller Evaluation**: Rule-based onboarding criteria (Rating ≥ 4.9, Reviews ≥ 500)
-- **Sentiment Analysis**: Real-time Reddit sentiment tracking from r/whatnotapp
-- **LLM-Powered Chatbot**: Natural language interface using OpenAI GPT-4
-- **Data Enrichment Pipeline**: Collects 40+ data points per seller including:
-  - Reddit mentions and sentiment
-  - Listing quality metrics
-  - Pricing analysis
-  - Social media presence
+## What Does This Do?
 
-## Project Structure
+Think of this as your personal assistant for seller research. Instead of manually checking hundreds of seller profiles, this tool:
 
-```
-whatnot_seller_analysis/
-├── seller_bot_llm.py          # LLM-powered chatbot (main interface)
-├── seller_bot.py              # Rule-based chatbot (legacy)
-├── enrich_sellers.py          # Data enrichment pipeline
-├── scrape_whatnot.py          # Whatnot data scraper
-├── clean_data.py              # Data cleaning utilities
-├── generate_report.py         # Report generation
-├── clean_seller_data.json     # Cleaned seller dataset
-├── enriched_top_5.json        # Enriched data for top candidates
-├── onboarding_report.txt      # Comprehensive onboarding report
-└── requirements.txt           # Python dependencies
-```
+1. **Collects seller data** from Whatnot (ratings, sales, reviews)
+2. **Reads Reddit discussions** to see what people are saying about sellers
+3. **Analyzes sentiment** - Are people happy or unhappy with this seller?
+4. **Gives you recommendations** - Which sellers meet your quality standards?
+5. **Lets you ask questions** - Just chat with the bot like "Who are the top 3 sellers?"
 
-## Installation
+## Why I Built This
 
-1. Clone the repository:
+I needed a faster way to evaluate Whatnot sellers for onboarding. Instead of spending hours researching each seller manually, this tool does it automatically and gives me detailed reports with real community feedback.
+
+## What You Need
+
+- Python 3 installed on your computer
+- An OpenAI API key (for the chatbot brain)
+- Internet connection (to scrape data)
+
+## How to Set It Up
+
+**Step 1: Download the code**
 ```bash
 git clone https://github.com/YOUR_USERNAME/whatnot-seller-analysis.git
 cd whatnot-seller-analysis
 ```
 
-2. Install dependencies:
+**Step 2: Install required libraries**
 ```bash
 pip3 install -r requirements.txt
 ```
 
-3. Set up your OpenAI API key:
-```bash
-# Create .env file
-echo "OPENAI_API_KEY=your_api_key_here" > .env
+**Step 3: Add your OpenAI API key**
+Create a file called `.env` and add:
+```
+OPENAI_API_KEY=your_key_here
 ```
 
-## Usage
+## How to Use It
 
-### Run the LLM Chatbot
+### Talk to the Chatbot
 ```bash
 python3 seller_bot_llm.py
 ```
 
-Example queries:
-- "Recommend 2 best sellers"
-- "What is the sentiment for krakenhits?"
-- "Show me sellers with positive reviews"
+Then ask questions like:
+- "Show me the best 5 sellers"
+- "What do people say about krakenhits on Reddit?"
+- "Which sellers have the most sales?"
 
-### Run Data Enrichment
+### Get a Full Report
 ```bash
 python3 enrich_sellers.py
-```
-
-### Generate Report
-```bash
 python3 generate_report.py
 cat onboarding_report.txt
 ```
 
-## Onboarding Criteria
+This creates a detailed report with sentiment analysis for the top sellers.
 
-- **Minimum Rating**: 4.9/5.0
-- **Minimum Reviews**: 500+
-- **Sentiment**: Positive community feedback
-- **Sales Volume**: High transaction history
+## What Makes a Good Seller?
 
-## Top 5 Recommended Sellers
+The tool looks for sellers with:
+- ⭐ **Rating**: 4.9 or higher (out of 5)
+- 💬 **Reviews**: At least 500 reviews
+- 😊 **Positive sentiment**: Good feedback on Reddit
+- 📈 **High sales**: Proven track record
 
-1. **krakenhits** - 5.0★, 2.3M sold, 96 Reddit mentions (46% positive)
-2. **CollectibleTags** - 5.0★, 186.7K sold, 64 Reddit mentions (55% positive)
-3. **wethehobby** - 5.0★, 392.3K sold, 19 Reddit mentions
-4. **Gamecorps** - 5.0★, 274.6K sold
-5. **drazcollects** - 5.0★, 117.4K sold
+## Top Sellers Found
 
-## Technologies Used
+Based on my analysis, here are the top 5 Whatnot sellers:
 
-- **Python 3.14**
-- **OpenAI GPT-4** - Natural language processing
-- **TextBlob** - Sentiment analysis
-- **BeautifulSoup4** - Web scraping
-- **Reddit JSON API** - Social media data collection
+1. **krakenhits** - Perfect 5.0 rating, 2.3M items sold, 96 Reddit mentions
+2. **CollectibleTags** - Perfect 5.0 rating, 186K items sold, 64 Reddit mentions  
+3. **wethehobby** - Perfect 5.0 rating, 392K items sold
+4. **Gamecorps** - Perfect 5.0 rating, 274K items sold
+5. **drazcollects** - Perfect 5.0 rating, 117K items sold
 
-## Data Sources
+## How It Works Behind the Scenes
 
-- Whatnot.com seller profiles
-- Reddit r/whatnotapp community discussions
-- Public seller reviews and ratings
+1. **Data Collection**: Scrapes Whatnot seller profiles
+2. **Reddit Analysis**: Searches r/whatnotapp for mentions of each seller
+3. **Sentiment Analysis**: Uses AI to determine if comments are positive, negative, or neutral
+4. **Smart Chatbot**: Uses GPT-4 to answer your questions in plain English
+5. **Report Generation**: Creates easy-to-read reports with all the data
+
+## Tech Stack (For the Curious)
+
+- Python 3.14
+- OpenAI GPT-4 (the chatbot brain)
+- TextBlob (sentiment analysis)
+- BeautifulSoup (web scraping)
+- Reddit's public API (no login needed)
+
+## Important Notes
+
+- ⚠️ This is for research only - always do your own verification
+- 🔒 Your API key stays private (it's in `.gitignore`)
+- 📊 Data files are excluded from GitHub for privacy
+- 🤖 The chatbot needs internet to work
+
+## Questions?
+
+Feel free to open an issue or reach out if you have questions about using this tool!
 
 ## License
 
-MIT License
-
-## Contributing
-
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-## Disclaimer
-
-This tool is for research and evaluation purposes only. Always verify seller credentials independently before making business decisions.
+MIT License - feel free to use and modify for your own projects.
