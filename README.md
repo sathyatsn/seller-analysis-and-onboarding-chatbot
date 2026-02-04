@@ -1,140 +1,128 @@
 # Seller Analysis and Onboarding Chatbot
 
-A smart chatbot that helps you find and evaluate the best sellers on Whatnot. This project uses AI to analyze seller data, read community feedback from Reddit, and give you recommendations on which sellers to work with.
+An automated system for evaluating Whatnot sellers using data analysis, sentiment tracking, and AI-powered recommendations. Built to streamline the seller onboarding process for live sales platforms.
 
-**Built for Whatnot** - This entire project was created specifically for analyzing Whatnot sellers and making better onboarding decisions.
+**Platform:** Whatnot marketplace seller evaluation and onboarding automation.
 
-## The Business Problem
+## Business Problem
 
-As an e-commerce company running live sales, I needed to onboard high-quality Whatnot sellers to my platform. The challenges I faced:
+Operating an e-commerce platform with live sales requires onboarding high-quality sellers. Manual evaluation presents several challenges:
 
-- **Time-consuming manual research** - Manually vetting each Whatnot seller's profile, reviews, and reputation took hours per seller
-- **Inconsistent evaluation** - Without a standardized process, different team members evaluated sellers differently
-- **Missing community insights** - Hard to discover what real buyers are saying about sellers on Reddit and social media
-- **Scale issues** - Can't efficiently evaluate hundreds of potential Whatnot sellers for live sale partnerships
+- **Time inefficiency** - Vetting each seller's profile, reviews, and reputation requires 2-3 hours per candidate
+- **Inconsistent standards** - Multiple team members apply different evaluation criteria
+- **Limited insights** - Community sentiment on Reddit and social media remains largely untapped
+- **Scalability constraints** - Manual processes cannot handle hundreds of seller applications
 
-**This project solves these problems** by automating the entire seller vetting process. Instead of spending hours researching each Whatnot seller manually, I get comprehensive reports with data-driven recommendations in minutes, helping me onboard only the best sellers to my live sales platform.
+**Solution:** This project automates seller evaluation, reducing research time from hours to minutes while providing data-driven recommendations based on quantitative metrics and community sentiment analysis.
 
 ## Project Highlights
 
 ### 🤖 AI-Powered Chatbot Interface
 ![Chatbot Demo](images/chatbot_demo.png)
-*Ask natural language questions and get instant seller recommendations with detailed metrics*
+*Natural language query interface for instant seller recommendations with comprehensive metrics*
 
 ### 📊 Sentiment Analysis Dashboard
 ![Sentiment Analysis](images/sentiment_analysis.png)
-*Analyze 40+ Reddit mentions per seller to understand community sentiment*
+*Aggregated analysis of 40+ Reddit mentions per seller for community sentiment evaluation*
 
 ### 🔄 System Architecture
 ![Architecture Schema](images/architecture_schema.png)
-*Complete data pipeline from scraping to AI-powered analysis and reporting*
+*End-to-end data pipeline: scraping, enrichment, analysis, and reporting*
 
-## What Does This Do?
+## Core Functionality
 
-Think of this as your personal assistant for seller research. Instead of manually checking hundreds of seller profiles, this tool:
+The system performs five key operations:
 
-1. **Collects seller data** from Whatnot (ratings, sales, reviews)
-2. **Reads Reddit discussions** to see what people are saying about sellers
-3. **Analyzes sentiment** - Are people happy or unhappy with this seller?
-4. **Gives you recommendations** - Which sellers meet your quality standards?
-5. **Lets you ask questions** - Just chat with the bot like "Who are the top 3 sellers?"
+1. **Data Collection** - Extracts seller metrics from Whatnot (ratings, sales volume, review counts)
+2. **Community Analysis** - Scrapes r/whatnotapp for seller mentions and discussions
+3. **Sentiment Classification** - Categorizes community feedback as positive, negative, or neutral
+4. **Recommendation Engine** - Filters sellers based on predefined quality thresholds
+5. **Interactive Queries** - Natural language interface for ad-hoc seller analysis
 
-## Why I Built This
+## Technical Implementation
 
-I needed a faster way to evaluate Whatnot sellers for onboarding. Instead of spending hours researching each seller manually, this tool does it automatically and gives me detailed reports with real community feedback.
+### Prerequisites
 
-## What You Need
+- Python 3.14+
+- OpenAI API key
+- Internet connectivity
 
-- Python 3 installed on your computer
-- An OpenAI API key (for the chatbot brain)
-- Internet connection (to scrape data)
+### Installation
 
-## How to Set It Up
-
-**Step 1: Download the code**
 ```bash
-git clone https://github.com/YOUR_USERNAME/whatnot-seller-analysis.git
-cd whatnot-seller-analysis
-```
-
-**Step 2: Install required libraries**
-```bash
+git clone https://github.com/sathyatsn/seller-analysis-and-onboarding-chatbot.git
+cd seller-analysis-and-onboarding-chatbot
 pip3 install -r requirements.txt
 ```
 
-**Step 3: Add your OpenAI API key**
-Create a file called `.env` and add:
+### Configuration
+
+Create `.env` file:
 ```
-OPENAI_API_KEY=your_key_here
+OPENAI_API_KEY=your_api_key_here
 ```
 
-## How to Use It
+### Usage
 
-### Talk to the Chatbot
+**Interactive Chatbot:**
 ```bash
 python3 seller_bot_llm.py
 ```
 
-Then ask questions like:
+Query examples:
 - "Show me the best 5 sellers"
 - "What do people say about krakenhits on Reddit?"
 - "Which sellers have the most sales?"
 
-### Get a Full Report
+**Batch Report Generation:**
 ```bash
 python3 enrich_sellers.py
 python3 generate_report.py
 cat onboarding_report.txt
 ```
 
-This creates a detailed report with sentiment analysis for the top sellers.
+## Evaluation Criteria
 
-## What Makes a Good Seller?
+Sellers are assessed against the following thresholds:
 
-The tool looks for sellers with:
-- ⭐ **Rating**: 4.9 or higher (out of 5)
-- 💬 **Reviews**: At least 500 reviews
-- 😊 **Positive sentiment**: Good feedback on Reddit
-- 📈 **High sales**: Proven track record
+- **Rating**: ≥ 4.9/5.0
+- **Reviews**: ≥ 500
+- **Sentiment**: Predominantly positive community feedback
+- **Sales Volume**: Demonstrated transaction history
 
-## Top Sellers Found
+## Analysis Results
 
-Based on my analysis, here are the top 5 Whatnot sellers:
+Top 5 sellers identified through automated evaluation:
 
-1. **krakenhits** - Perfect 5.0 rating, 2.3M items sold, 96 Reddit mentions
-2. **CollectibleTags** - Perfect 5.0 rating, 186K items sold, 64 Reddit mentions  
-3. **wethehobby** - Perfect 5.0 rating, 392K items sold
-4. **Gamecorps** - Perfect 5.0 rating, 274K items sold
-5. **drazcollects** - Perfect 5.0 rating, 117K items sold
+1. **krakenhits** - 5.0 rating, 2.3M sales, 96 Reddit mentions
+2. **CollectibleTags** - 5.0 rating, 186K sales, 64 Reddit mentions  
+3. **wethehobby** - 5.0 rating, 392K sales, 19 Reddit mentions
+4. **Gamecorps** - 5.0 rating, 274K sales
+5. **drazcollects** - 5.0 rating, 117K sales
 
-## How It Works Behind the Scenes
+## System Architecture
 
-1. **Data Collection**: Scrapes Whatnot seller profiles
-2. **Reddit Analysis**: Searches r/whatnotapp for mentions of each seller
-3. **Sentiment Analysis**: Uses AI to determine if comments are positive, negative, or neutral
-4. **Smart Chatbot**: Uses GPT-4 to answer your questions in plain English
-5. **Report Generation**: Creates easy-to-read reports with all the data
+**Data Pipeline:**
+1. Web scraping of Whatnot seller profiles
+2. Reddit mention extraction from r/whatnotapp
+3. TextBlob-based sentiment classification
+4. GPT-4 powered natural language interface
+5. Automated report generation
 
-## Tech Stack (For the Curious)
-
+**Technology Stack:**
 - Python 3.14
-- OpenAI GPT-4 (the chatbot brain)
+- OpenAI GPT-4
 - TextBlob (sentiment analysis)
 - BeautifulSoup (web scraping)
-- Reddit's public API (no login needed)
+- Reddit JSON API
 
-## Important Notes
+## Security & Privacy
 
-- ⚠️ This is for research only - always do your own verification
-- 🔒 Your API key stays private (it's in `.gitignore`)
-- 📊 Data files are excluded from GitHub for privacy
-- 🤖 The chatbot needs internet to work
-
-## Questions?
-
-Feel free to open an issue or reach out if you have questions about using this tool!
+- API keys stored in `.env` (excluded from version control)
+- Seller data files excluded from repository
+- All data collection uses public APIs
 
 ## License
 
-MIT License - feel free to use and modify for your own projects.
+MIT License
 # seller-analysis-and-onboarding-chatbot
