@@ -6,14 +6,14 @@ A smart chatbot that helps you find and evaluate the best sellers on Whatnot. Th
 
 ## The Business Problem
 
-When onboarding new sellers to a marketplace, you face several challenges:
+As an e-commerce company running live sales, I needed to onboard high-quality Whatnot sellers to my platform. The challenges I faced:
 
-- **Time-consuming manual research** - Checking each seller's profile, reviews, and reputation takes hours
-- **Inconsistent evaluation** - Different people might judge sellers differently
-- **Missing community insights** - Hard to know what real users are saying on social media
-- **Scale issues** - Can't efficiently evaluate hundreds of potential sellers
+- **Time-consuming manual research** - Manually vetting each Whatnot seller's profile, reviews, and reputation took hours per seller
+- **Inconsistent evaluation** - Without a standardized process, different team members evaluated sellers differently
+- **Missing community insights** - Hard to discover what real buyers are saying about sellers on Reddit and social media
+- **Scale issues** - Can't efficiently evaluate hundreds of potential Whatnot sellers for live sale partnerships
 
-**This project solves these problems** by automating the entire seller evaluation process. Instead of spending hours per seller, you get comprehensive reports with data-driven recommendations in minutes.
+**This project solves these problems** by automating the entire seller vetting process. Instead of spending hours researching each Whatnot seller manually, I get comprehensive reports with data-driven recommendations in minutes, helping me onboard only the best sellers to my live sales platform.
 
 ## What Does This Do?
 
