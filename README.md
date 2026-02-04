@@ -15,6 +15,20 @@ As an e-commerce company running live sales, I needed to onboard high-quality Wh
 
 **This project solves these problems** by automating the entire seller vetting process. Instead of spending hours researching each Whatnot seller manually, I get comprehensive reports with data-driven recommendations in minutes, helping me onboard only the best sellers to my live sales platform.
 
+## Project Highlights
+
+### 🤖 AI-Powered Chatbot Interface
+![Chatbot Demo](images/chatbot_demo.png)
+*Ask natural language questions and get instant seller recommendations with detailed metrics*
+
+### 📊 Sentiment Analysis Dashboard
+![Sentiment Analysis](images/sentiment_analysis.png)
+*Analyze 40+ Reddit mentions per seller to understand community sentiment*
+
+### 🔄 System Architecture
+![Architecture Schema](images/architecture_schema.png)
+*Complete data pipeline from scraping to AI-powered analysis and reporting*
+
 ## What Does This Do?
 
 Think of this as your personal assistant for seller research. Instead of manually checking hundreds of seller profiles, this tool:
