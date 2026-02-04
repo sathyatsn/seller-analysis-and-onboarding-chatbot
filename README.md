@@ -116,13 +116,5 @@ Top 5 sellers identified through automated evaluation:
 - BeautifulSoup (web scraping)
 - Reddit JSON API
 
-## Security & Privacy
-
-- API keys stored in `.env` (excluded from version control)
-- Seller data files excluded from repository
 - All data collection uses public APIs
-
-## License
-
-MIT License
 # seller-analysis-and-onboarding-chatbot
